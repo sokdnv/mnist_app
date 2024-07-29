@@ -8,7 +8,7 @@ import numpy as np
 import cv2
 
 
-@st.cache_resource()
+@st.cache_resource
 def load_model():
     model = Model()
     model.load_state_dict(torch.load('mnist_loc.pt', map_location=torch.device('cpu')))
@@ -20,7 +20,7 @@ model = load_model()
 
 def predict(img):
     img = preprocess(img)
-    with torch.no_grad():
+    with torch.inference_mode():
         pred, box = model(img)
     return pred, box
 
