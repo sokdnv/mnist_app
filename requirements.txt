@@ -5,4 +5,5 @@ streamlit
 streamlit_drawable_canvas
 torch
 torchvision
-opencv-python
+opencv-python==4.10.0.84
+
