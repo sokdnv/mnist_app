@@ -63,7 +63,7 @@ if submit:
     img_cv2 = cv2.cvtColor(img_np, cv2.COLOR_GRAY2BGR)
     box = box.cpu().numpy()[0]
     box = (box * [img_cv2.shape[1], img_cv2.shape[0], img_cv2.shape[1], img_cv2.shape[0]]).astype(int)
-    img_cv2 = cv2.rectangle(img_cv2, (box[0], box[1]), (box[2], box[3]), color=(0, 255, 0), thickness=2)
+    img_cv2 = cv2.rectangle(img_cv2, (box[0], box[1]), (box[2], box[3]), color=(0, 255, 0), thickness=1)
 
     st.image(img_cv2, caption='Изображение с локализацией')
 
